@@ -1,0 +1,32 @@
+// Filename: backend/nothing.jsw (web modules need to have a .jsw extension)
+import _ from 'underscore';
+
+export function multiply() {
+var values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+	var isEven = function (value) { 
+		return value % 2 === 0; 
+	}; 
+	let example = _.some(values, isEven);
+	console.log("example: ",example);
+	return example
+}
+
+
+
+//Use the following code in one of your site's front-end files
+//to call the multiply function from backend/nothing.jsw.
+
+/* 
+import {multiply} from 'backend/nothing';
+
+$w.onReady(function () {
+	
+	multiply(4,5).then(product => {
+	    console.log(product);
+	      // Logs: 20
+	})
+	.catch(error => {
+		console.log(error);
+	});
+});
+*/

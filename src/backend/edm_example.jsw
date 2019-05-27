@@ -1,0 +1,25 @@
+import wixExample from 'wix-edm-example';
+import wixData from 'wix-data';
+
+export async function doExample(source) {
+    let greet = wixExample.greet(source)
+    let paramTolog = 'fromScheduler'
+	if (source != null) {
+		paramTolog = source;
+	}
+
+	let toInsert = {
+	"title": greet,
+	"date" : Date.now(),
+	"calledFrom": paramTolog
+	};
+
+	wixData.insert("data", toInsert)
+	.then( (results) => {
+			let item = results; //see item below
+		} )
+		.catch( (err) => {
+			let errorMsg = err;
+			console.log("err: "+err);
+		} );
+}

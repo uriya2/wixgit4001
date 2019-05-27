@@ -1,0 +1,20 @@
+// Filename: backend/work2.jsw (web modules need to have a .jsw extension)
+import wixData from 'wix-data';
+
+export async function do3(param1){
+
+	let toInsert = {
+	"title": "some nice title",
+	"date" : Date.now(),
+	"calledFrom": "here"
+	};
+
+	wixData.insert("data", toInsert)
+	.then( (results) => {
+			let item = results; //see item below
+		} )
+		.catch( (err) => {
+			let errorMsg = err;
+			console.log("err: "+err);
+		} );
+}
