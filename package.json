@@ -1,0 +1,8 @@
+{
+  "name": "site3",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "corvid-cli": "0.1.64"
+  }
+}
